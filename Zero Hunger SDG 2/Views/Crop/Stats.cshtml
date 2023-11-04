@@ -1,0 +1,37 @@
+﻿@model Zero_Hunger_SDG_2.Models.TotalsViewModel
+
+@{
+    ViewData["Title"] = "Stats";
+}
+
+<h1>Statistics</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalIncome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalExpenses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalYield)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                R @Model.TotalIncome
+            </td>
+            <td>
+                R @Model.TotalExpenses
+            </td>
+            <td>
+                @Model.TotalYield 
+            </td>
+        </tr>
+    </tbody>
+</table>

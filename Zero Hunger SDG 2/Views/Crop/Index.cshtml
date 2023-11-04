@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Zero_Hunger_SDG_2.Models.Crop>
+
+@{
+    ViewData["Title"] = "All Crops";
+}
+
+<h1>All Crops</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Crop Name
+            </th>
+            <th>
+                Crop Yield
+            </th>
+            <th>
+                Crop Expenses
+            </th>
+            <th>
+                Crop Income
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CropName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CropYield)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => item.CropExpenses)
+            </td>
+            <td>
+                R @Html.DisplayFor(modelItem => item.CropIncome)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CropId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CropId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
